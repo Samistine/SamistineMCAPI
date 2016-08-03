@@ -1,0 +1,10 @@
+name: SamistineAPI
+version: ${project.version}-b${BUILD_NUMBER}
+
+git_repo: https://github.com/Samistine/SamistineMCAPI
+git_hash: ${git_hash}
+jenkins_build: ${BUILD_NUMBER}
+
+author: Samuel Seidel
+main: com.samistine.mcplugins.api.SamistineAPI
+description: An api for implementing self-contained features.
