@@ -1,4 +1,4 @@
-package com.samistine.samistineutilities.utils.annotations.command.args;
+package com.samistine.mcplugins.api.utils.annotations.command.args;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedList;

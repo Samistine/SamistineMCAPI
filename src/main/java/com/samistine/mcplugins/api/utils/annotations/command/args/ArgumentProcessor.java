@@ -1,4 +1,4 @@
-package com.samistine.samistineutilities.utils.annotations.command.args;
+package com.samistine.mcplugins.api.utils.annotations.command.args;
 
 /**
  * Used to process command arguments into an easy to work with format.

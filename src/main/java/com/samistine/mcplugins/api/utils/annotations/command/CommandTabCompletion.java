@@ -1,4 +1,4 @@
-package com.samistine.samistineutilities.utils.annotations.command;
+package com.samistine.mcplugins.api.utils.annotations.command;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package com.samistine.samistineutilities.utils.annotations.command.exception;
+package com.samistine.mcplugins.api.utils.annotations.command.exception;
 
 public class CommandRegistrationException extends RuntimeException {
 

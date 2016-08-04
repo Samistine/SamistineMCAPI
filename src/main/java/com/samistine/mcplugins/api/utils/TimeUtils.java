@@ -1,4 +1,4 @@
-package com.samistine.samistineutilities.utils;
+package com.samistine.mcplugins.api.utils;
 
 /**
  * Taken from http://stackoverflow.com/a/3860287/5797169

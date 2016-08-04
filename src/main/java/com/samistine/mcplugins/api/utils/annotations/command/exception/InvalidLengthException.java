@@ -25,7 +25,7 @@
  *  authors and contributors and should not be interpreted as representing official policies,
  *  either expressed or implied, of anybody else.
  */
-package com.samistine.samistineutilities.utils.annotations.command.exception;
+package com.samistine.mcplugins.api.utils.annotations.command.exception;
 
 public class InvalidLengthException extends CommandException {
 

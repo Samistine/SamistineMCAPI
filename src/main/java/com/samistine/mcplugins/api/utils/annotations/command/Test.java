@@ -21,10 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.samistine.samistineutilities.utils.annotations.command;
+package com.samistine.mcplugins.api.utils.annotations.command;
 
-import com.samistine.samistineutilities.utils.annotations.command.backend.AnnotatedCommand;
-import com.samistine.samistineutilities.utils.annotations.command.handler.CommandErrorHandler;
+import com.samistine.mcplugins.api.utils.annotations.command.backend.AnnotatedCommand;
+import com.samistine.mcplugins.api.utils.annotations.command.handler.CommandErrorHandler;
 import java.util.Arrays;
 import java.util.Set;
 import org.bukkit.Server;

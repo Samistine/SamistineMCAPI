@@ -1,4 +1,4 @@
-package com.samistine.samistineutilities.utils;
+package com.samistine.mcplugins.api.utils;
 
 import java.util.Objects;
 

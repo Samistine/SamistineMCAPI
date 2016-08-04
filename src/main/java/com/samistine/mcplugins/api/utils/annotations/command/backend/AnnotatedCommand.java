@@ -21,16 +21,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.samistine.samistineutilities.utils.annotations.command.backend;
+package com.samistine.mcplugins.api.utils.annotations.command.backend;
 
-import com.samistine.samistineutilities.utils.annotations.command.CommandTabCompletion;
-import com.samistine.samistineutilities.utils.annotations.command.handler.CommandErrorHandler;
-import com.samistine.samistineutilities.utils.annotations.command.exception.CommandException;
-import com.samistine.samistineutilities.utils.annotations.command.exception.CommandRegistrationException;
-import com.samistine.samistineutilities.utils.annotations.command.exception.IllegalSenderException;
-import com.samistine.samistineutilities.utils.annotations.command.exception.InvalidLengthException;
-import com.samistine.samistineutilities.utils.annotations.command.exception.PermissionException;
-import com.samistine.samistineutilities.utils.annotations.command.exception.UnhandledCommandException;
+import com.samistine.mcplugins.api.utils.annotations.command.CommandTabCompletion;
+import com.samistine.mcplugins.api.utils.annotations.command.handler.CommandErrorHandler;
+import com.samistine.mcplugins.api.utils.annotations.command.exception.CommandException;
+import com.samistine.mcplugins.api.utils.annotations.command.exception.CommandRegistrationException;
+import com.samistine.mcplugins.api.utils.annotations.command.exception.IllegalSenderException;
+import com.samistine.mcplugins.api.utils.annotations.command.exception.InvalidLengthException;
+import com.samistine.mcplugins.api.utils.annotations.command.exception.PermissionException;
+import com.samistine.mcplugins.api.utils.annotations.command.exception.UnhandledCommandException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;

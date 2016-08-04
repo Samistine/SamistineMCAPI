@@ -21,9 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.samistine.samistineutilities.utils.annotations.command.handler;
+package com.samistine.mcplugins.api.utils.annotations.command.handler;
 
-import com.samistine.samistineutilities.utils.annotations.command.exception.*;
+import com.samistine.mcplugins.api.utils.annotations.command.exception.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 

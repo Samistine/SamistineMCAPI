@@ -21,9 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.samistine.samistineutilities.utils.annotations.config;
+package com.samistine.mcplugins.api.utils.annotations.config;
 
-import com.samistine.samistineutilities.utils.ReflectionUtils;
+import com.samistine.mcplugins.api.utils.ReflectionUtils;
 import java.lang.reflect.Field;
 import java.util.logging.Level;
 import java.util.logging.Logger;

@@ -25,6 +25,7 @@ package com.samistine.mcplugins.api;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Parameter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bukkit.ChatColor;
@@ -132,7 +133,7 @@ public final class FeatureHelper {
 
     synchronized void enable() {
         if (status == Status.INITIALIZED) {
-            status = enable(instance) ? Status.ENABLED : Status.ERROR_INITIALIZATION2;
+            status = enable(plugin, instance) ? Status.ENABLED : Status.ERROR_INITIALIZATION2;
         } else {
             throw new IllegalStateException("Can not enable a non initialized feature, State was:" + status.name());
         }
@@ -140,7 +141,7 @@ public final class FeatureHelper {
 
     synchronized void disable() {
         if (status == Status.ENABLED) {
-            status = disable(instance) ? Status.INITIALIZED : Status.ERROR_DISABLING;
+            status = disable(plugin, instance) ? Status.INITIALIZED : Status.ERROR_DISABLING;
         } else {
             throw new IllegalStateException("Can not disable a non enabled feature, State was:" + status.name());
         }
@@ -155,11 +156,12 @@ public final class FeatureHelper {
     }
 
     private static SFeature init(Plugin main, FeatureHelper feature) {
-        Logger logger = SamistineAPI.getInstance().getLogger();
+        Logger logger = main.getLogger();
         try {
             logger.log(Level.INFO, "Initializing {0}", feature.getName());
             Class<SFeature> clazz = (Class<SFeature>) feature.getClazz();
-            Constructor<SFeature> constructor = clazz.getDeclaredConstructor(new Class[]{JavaPlugin.class});
+            //Constructor<SFeature> constructor = clazz.getDeclaredConstructor(new Class[]{JavaPlugin.class});
+            Constructor<SFeature> constructor = getConstructor(clazz);
             logger.log(Level.FINE, "Initialized {0}", feature.getName());
             return constructor.newInstance(main);
         } catch (InstantiationException | IllegalAccessException | RuntimeException | NoSuchMethodException | InvocationTargetException ex) {
@@ -168,8 +170,17 @@ public final class FeatureHelper {
         }
     }
 
-    private static boolean enable(SFeature feature) {
-        Logger logger = SamistineAPI.getInstance().getLogger();
+    private static Constructor<SFeature> getConstructor(Class<SFeature> clazz) throws NoSuchMethodException {
+        for (Constructor<?> con : clazz.getDeclaredConstructors()) {
+            if (con.getParameterCount() == 1 && JavaPlugin.class.isAssignableFrom(con.getParameterTypes()[0])) {
+                return (Constructor<SFeature>) con;
+            }
+        }
+        throw new NoSuchMethodException("Could not find constructor SFeature(JavaPlugin)");
+    }
+
+    private static boolean enable(Plugin main, SFeature feature) {
+        Logger logger = main.getLogger();
         if (feature == null) {
             throw new NullPointerException("Feature can not be null");
         } else {
@@ -182,8 +193,8 @@ public final class FeatureHelper {
         }
     }
 
-    private static boolean disable(SFeature feature) {
-        Logger logger = SamistineAPI.getInstance().getLogger();
+    private static boolean disable(Plugin main, SFeature feature) {
+        Logger logger = main.getLogger();
         if (feature == null) {
             throw new NullPointerException("Feature can not be null");
         } else {

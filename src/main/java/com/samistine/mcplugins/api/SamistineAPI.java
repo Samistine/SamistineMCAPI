@@ -18,13 +18,9 @@ import org.reflections.Reflections;
  */
 public class SamistineAPI extends JavaPlugin {
 
-    Map<Plugin, List<FeatureHelper>> features = new HashMap<>();
+    List<FeatureHelper> features = new ArrayList<>();
 
-    public static SamistineAPI getInstance() {
-        return getPlugin(SamistineAPI.class);
-    }
-
-    public Collection<FeatureHelper> loadFeatures(Plugin plugin, String classPath, Predicate<FeatureHelper> shouldEnable) {
+    protected Collection<FeatureHelper> loadFeatures(Plugin plugin, String classPath, Predicate<FeatureHelper> shouldEnable) {
         Reflections reflections = new Reflections(classPath);
         Set<Class<?>> annotated = reflections.getTypesAnnotatedWith(FeatureInfo.class);
 
@@ -46,9 +42,7 @@ public class SamistineAPI extends JavaPlugin {
             featureHelpers.add(featureHelper);
         }
 
-        features.putIfAbsent(plugin, new ArrayList<>());
-
-        List<FeatureHelper> list = features.get(plugin);
+        List<FeatureHelper> list = features;
 
         list.addAll(featureHelpers);
 
@@ -74,23 +68,27 @@ public class SamistineAPI extends JavaPlugin {
      * @param feature
      * @return <tt>true</tt> if this list contained the specified feature
      */
-    public boolean unloadFeature(FeatureHelper feature) {
-        feature.disable();
-        return features.get(feature.getPlugin()).remove(feature);
+    protected boolean unloadFeature(FeatureHelper feature) {
+        if (feature.stateIsEnabled()) {
+            feature.disable();
+        }
+        return features.remove(feature);
     }
 
-    public static String[] getModuleStatus() {
-        return SamistineAPI.getInstance().features.keySet().stream().map((plugin) -> {
-            return ChatColor.GOLD + "[" + plugin.getName() + "]" + ChatColor.GRAY + " Status: " + getModuleStatus(plugin);
-        }).toArray(String[]::new);
+    protected String getModuleStatus() {
+        return ChatColor.GOLD + "[" + getName() + "]" + ChatColor.GRAY + " Status: " + getModuleStatus_();
     }
 
-    public static String getModuleStatus(Plugin plugin) {
+    private String getModuleStatus_() {
         StringBuilder sb = new StringBuilder(300);
-        for (FeatureHelper feature : SamistineAPI.getInstance().features.get(plugin)) {
+        for (FeatureHelper feature : features) {
             sb.append(feature.getStatus().getStatusColor()).append(feature.getName()).append(", ");
         }
         String status = sb.toString();
         return status.substring(0, status.lastIndexOf(", "));
+    }
+
+    static SamistineAPI getInstance() {
+        return getPlugin(SamistineAPI.class);
     }
 }

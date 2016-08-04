@@ -1,17 +1,17 @@
-package com.samistine.samistineutilities.utils.annotations.command.backend;
+package com.samistine.mcplugins.api.utils.annotations.command.backend;
 
-import com.samistine.samistineutilities.utils.annotations.command.handler.CommandErrorHandler;
-import com.samistine.samistineutilities.utils.BukkitUtils;
+import com.samistine.mcplugins.api.utils.annotations.command.handler.CommandErrorHandler;
+import com.samistine.mcplugins.api.utils.BukkitUtils;
 import java.lang.reflect.Method;
 
 import org.bukkit.command.CommandMap;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.SimplePluginManager;
 
-import com.samistine.samistineutilities.utils.ReflectionUtils;
-import com.samistine.samistineutilities.utils.annotations.command.Command;
-import com.samistine.samistineutilities.utils.annotations.command.SubCommand;
-import com.samistine.samistineutilities.utils.annotations.command.exception.CommandRegistrationException;
+import com.samistine.mcplugins.api.utils.ReflectionUtils;
+import com.samistine.mcplugins.api.utils.annotations.command.Command;
+import com.samistine.mcplugins.api.utils.annotations.command.SubCommand;
+import com.samistine.mcplugins.api.utils.annotations.command.exception.CommandRegistrationException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;

@@ -23,7 +23,7 @@
  */
 package com.samistine.mcplugins.api;
 
-import com.samistine.samistineutilities.utils.annotations.command.backend.CommandManager;
+import com.samistine.mcplugins.api.utils.annotations.command.backend.CommandManager;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

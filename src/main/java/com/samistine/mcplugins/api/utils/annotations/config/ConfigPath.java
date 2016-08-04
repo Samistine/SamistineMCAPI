@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.samistine.samistineutilities.utils.annotations.config;
+package com.samistine.mcplugins.api.utils.annotations.config;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

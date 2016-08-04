@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.samistine.samistineutilities.utils.annotations.command.exception;
+package com.samistine.mcplugins.api.utils.annotations.command.exception;
 
 /**
  * Thrown when executing a command if the command-sender does not have

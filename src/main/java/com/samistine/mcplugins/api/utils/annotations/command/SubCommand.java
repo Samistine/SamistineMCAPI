@@ -1,7 +1,7 @@
-package com.samistine.samistineutilities.utils.annotations.command;
+package com.samistine.mcplugins.api.utils.annotations.command;
 
-import com.samistine.samistineutilities.utils.annotations.command.handler.CommandErrorHandler;
-import com.samistine.samistineutilities.utils.annotations.command.handler.FeedbackErrorHandler;
+import com.samistine.mcplugins.api.utils.annotations.command.handler.CommandErrorHandler;
+import com.samistine.mcplugins.api.utils.annotations.command.handler.FeedbackErrorHandler;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

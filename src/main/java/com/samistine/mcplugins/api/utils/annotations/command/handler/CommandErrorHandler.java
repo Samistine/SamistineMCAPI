@@ -25,9 +25,9 @@
  *  authors and contributors and should not be interpreted as representing official policies,
  *  either expressed or implied, of anybody else.
  */
-package com.samistine.samistineutilities.utils.annotations.command.handler;
+package com.samistine.mcplugins.api.utils.annotations.command.handler;
 
-import com.samistine.samistineutilities.utils.annotations.command.exception.*;
+import com.samistine.mcplugins.api.utils.annotations.command.exception.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 

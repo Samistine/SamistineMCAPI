@@ -1,7 +1,7 @@
 /*
  * Public Domain
  */
-package com.samistine.samistineutilities.utils.annotations.command.exception;
+package com.samistine.mcplugins.api.utils.annotations.command.exception;
 
 /**
  * This class and it's subclasses are thrown when an issue occurs while
