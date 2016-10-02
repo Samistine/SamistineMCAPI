@@ -52,6 +52,8 @@ public @interface FeatureInfo {
      */
     public String desc();
 
+    public String category() default "";
+
     /**
      * Gets the commands this method can handle
      * <p>

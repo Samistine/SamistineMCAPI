@@ -93,13 +93,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>indexed-tree-map</groupId>
-            <artifactId>indexed-tree-map</artifactId>
-            <version>1.0</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>org.reflections</groupId>
             <artifactId>reflections</artifactId>
             <version>0.9.10</version>

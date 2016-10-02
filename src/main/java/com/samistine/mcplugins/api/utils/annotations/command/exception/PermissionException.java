@@ -39,6 +39,7 @@ public class PermissionException extends CommandException {
     /**
      * Create a new instance of {@link PermissionException}
      *
+     * @param command the command for which this exception is being thrown for
      * @param permission permission that was needed to execute the command
      * without throwing this exception
      */
