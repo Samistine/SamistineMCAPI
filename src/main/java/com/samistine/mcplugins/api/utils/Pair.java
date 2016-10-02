@@ -10,7 +10,7 @@ import java.util.Objects;
  * @param <F> first element's type
  * @param <S> second element's type
  */
-public class Pair<F, S> {
+public final class Pair<F, S> {
 
     public final F first;
     public final S second;
