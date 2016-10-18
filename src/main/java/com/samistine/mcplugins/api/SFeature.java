@@ -97,7 +97,7 @@ public abstract class SFeature {
     boolean start() {
         if (isRunning()) {
             throw new AlreadyStartedException(featureName + " is already running.");
-        } else if (shouldEnable()) {
+        } else {
             featureLogger.log(Level.FINE, "Enabling");
             onEnable();
             featureLogger.log(Level.INFO, "Enabled");
@@ -118,10 +118,6 @@ public abstract class SFeature {
     protected abstract void onEnable();
 
     protected abstract void onDisable();
-
-    protected boolean shouldEnable() {
-        return getRootConfig().get(featureName, null) != null;
-    }
 
     protected ConfigurationSection getConfig() {
         return getRootConfig().getConfigurationSection(featureName);
